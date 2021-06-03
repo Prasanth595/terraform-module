@@ -2,7 +2,7 @@ A module to manage Google Cloud Filestore instance
 
 ```
  module "ModuleName" {
-     source     = "moduleurl"
+     source     = "github.com/Prasanth595/terraform-module/filestore"
      project_id = ""
      name       = ""
      zone       = ""
