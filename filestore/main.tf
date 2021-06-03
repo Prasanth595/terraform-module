@@ -1,3 +1,16 @@
+
+resource "google_project_service" "enable-apis" {
+    for_each = toset([
+        "file.googleapis.com",
+        "cloudresourcemanager.googleapis.com"
+        ])
+  project = var.project_id
+  service = each.key
+
+  disable_dependent_services = false
+}
+
+
 resource "google_filestore_instance" "instance" {
   project = var.project_id
   name    = var.name 
